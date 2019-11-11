@@ -1,3 +1,11 @@
+<!--
+ * @Author: your name
+ * @Date: 2019-11-11 21:32:30
+ * @LastEditTime: 2019-11-11 22:17:31
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \pop-tip\src\components\HelloWorld.vue
+ -->
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
@@ -27,6 +35,8 @@
       <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
+    <button @click="dCilck">click</button>
+    <button @click="dCilck2">cancel</button>
   </div>
 </template>
 
@@ -35,6 +45,17 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  mounted() {
+    console.log(this.$http)
+  },
+  methods: {
+    dCilck() {
+      this.$pop.show();
+    },
+    dCilck2() {
+      this.$pop.hide();
+    }
   }
 }
 </script>
